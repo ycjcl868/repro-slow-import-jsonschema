@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  mcp:
+    build: .
+    command: ["python", "scripts/run_mcp.py"]
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 2g
+    environment:
+      PYTHONUNBUFFERED: "1"
+  jsonschema:
+    build: .
+    command: ["python", "scripts/run_jsonschema.py"]
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 2g
+    environment:
+      PYTHONUNBUFFERED: "1"
