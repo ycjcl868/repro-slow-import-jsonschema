@@ -4,20 +4,16 @@ services:
   mcp:
     build: .
     command: ["python", "scripts/run_mcp.py"]
-    deploy:
-      resources:
-        limits:
-          cpus: "1"
-          memory: 2g
+    mem_limit: "4g"
+    cpus: "1"
+    shm_size: "2gb"
     environment:
       PYTHONUNBUFFERED: "1"
   jsonschema:
     build: .
     command: ["python", "scripts/run_jsonschema.py"]
-    deploy:
-      resources:
-        limits:
-          cpus: "1"
-          memory: 2g
+    mem_limit: "4g"
+    cpus: "1"
+    shm_size: "2gb"
     environment:
       PYTHONUNBUFFERED: "1"
